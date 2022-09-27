@@ -1,5 +1,5 @@
 import { Body, Controller, Post } from '@nestjs/common';
-import { usermodel } from './models/User.model';
+import { usermodel } from '../../models/User.model';
 
 @Controller('user')
 export class UserController {
