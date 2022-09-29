@@ -18,21 +18,12 @@ export class UserController {
     }
 
     @Get('/:email')
-    getUser(@Param('email') param) : usermodel{
+    getUser(@Param('email') param) : usermodel | string{
+        const user = this.usersarvice.getByEmail(param)
         
-        return this.validateQuest(this.usersarvice.getByEmail(param))
-            
+        return user ??  "el usuario no existe"
         
         
-    }
-
-    validateQuest(request: usermodel){
-        if (request != undefined) {
-            return request;
-        } else {
-            console.error('El Usuario no existe');
-            
-        } 
     }
     
 }
