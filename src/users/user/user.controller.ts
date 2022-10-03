@@ -1,5 +1,5 @@
 import { usermodel } from './../../models/User.model';
-import { Body, Controller, Post,Param, Get } from '@nestjs/common';
+import { Body, Controller, Post,Param, Get, Put } from '@nestjs/common';
 import { UserServiceService } from 'src/services/user-service/user-service.service';
 
 
@@ -18,21 +18,17 @@ export class UserController {
     }
 
     @Get('/:email')
-    getUser(@Param('email') param) : usermodel{
+    getUser(@Param('email') param) : usermodel | string{
+        const user = this.usersarvice.getByEmail(param)
         
-        return this.validateQuest(this.usersarvice.getByEmail(param))
-            
+        return user ??  "el usuario no existe"
         
-        
+    
     }
-
-    validateQuest(request: usermodel){
-        if (request != undefined) {
-            return request;
-        } else {
-            console.error('El Usuario no existe');
-            
-        } 
+    
+    @Put('/update/:id')
+    actualizartUsuario(@Body() user : usermodel, @Param('id') id){
+        return this.usersarvice.updateUserById(Number(id), user)
     }
     
 }
