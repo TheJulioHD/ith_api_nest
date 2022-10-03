@@ -1,5 +1,5 @@
 import { usermodel } from './../../models/User.model';
-import { Body, Controller, Post,Param, Get } from '@nestjs/common';
+import { Body, Controller, Post,Param, Get, Put } from '@nestjs/common';
 import { UserServiceService } from 'src/services/user-service/user-service.service';
 
 
@@ -23,7 +23,12 @@ export class UserController {
         
         return user ??  "el usuario no existe"
         
-        
+    
+    }
+    
+    @Put('/update/:id')
+    actualizartUsuario(@Body() user : usermodel, @Param('id') id){
+        return this.usersarvice.updateUserById(Number(id), user)
     }
     
 }
