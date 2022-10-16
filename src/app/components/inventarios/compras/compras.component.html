@@ -1,0 +1,152 @@
+<div class="container">
+           <form (ngSubmit)="onSumit()">
+                <div class="row">
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="exampleInputtext1" class="form-label">Proveedor:</label>
+                            <input type="text" [(ngModel)]="compras.prov" class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
+                           
+                          </div>
+                          <div class="mb-3">
+                            <label for="exampleInputtext1" class="form-label">Bodega:</label>
+                            <input type="text" class="form-control" id="exampleInputtext1">
+                          </div>
+                          <div class="mb-3">
+                              <label for="exampleInputtext1" class="form-label">Estado:</label>
+                              <input type="text" class="form-control" id="exampleInputtext1">
+                            </div>
+                    </div>
+                    <div class="col-md-4">
+                        <div class="mb-3">
+                            <label for="exampleInputtext1" class="form-label">Quien lo solicita:</label>
+                            <input type="text" class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
+                            
+                          </div>
+                          <div class="mb-3">
+                            <label for="exampleInputtext1" class="form-label">Quien lo autoriza:</label>
+                            <input type="text" class="form-control" id="exampleInputtext1">
+                          </div>
+                          <div class="mb-3">
+                              <label for="exampleInputtext1" class="form-label">Direccion de entrega:</label>
+                              <input type="text" class="form-control" id="exampleInputtext1">
+                            </div>
+                    </div>
+                </div>
+                <div class="mb-3">
+                    <label for="exampleInputtext1" class="form-label">Observaciones</label>
+                    <input type="text-area" class="form-control" id="exampleInputtext1">
+                  </div>
+                <div class="mb-3 form-check">
+                  <input type="checkbox" class="form-check-input" id="exampleCheck1">
+                  <label class="form-check-label" for="exampleCheck1">Check me out</label>
+                </div>
+                <button type="button" class="btn btn-primary">Agregar Compra</button>
+      </form>
+</div><br>
+
+<br>
+<div class="container">
+  <div class="row">
+    <div class="col">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Agregar
+      </button><br>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-primary">
+        Imprimir
+      </button><br>
+    </div>
+    <div class="col"></div>
+    <div class="col"></div>
+  </div>
+  <table class="table">
+    <thead class="table-dark">
+      <tr>
+          <th scope="col">item</th>
+          <th scope="col">Código</th>
+          <th scope="col">descipcion</th>
+          <th scope="col">unidad</th>
+          <th scope="col">cantidad</th>
+          <th scope="col">precio uni</th>
+          <th scope="col">iva</th>
+          <th scope="col">descuento</th>
+    </tr>
+    </thead>
+    <tbody>
+      <tr *ngFor="let item of ltscompras">
+          <th scope="row">1</th>
+          <td>uuid</td>
+        <td>{{item.prov}}</td>
+        <td>tuuid</td>
+        <td>15</td>
+        <td>20$</td>
+        <td>16%</td>
+        <td>0%</td>
+        
+      </tr>
+     
+    </tbody>
+  </table>
+</div>
+  
+    <!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h1 class="modal-title fs-5" id="exampleModalLabel">Modal Agregar Compra</h1>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="mb-3">
+                      <label for="exampleInputtext1" class="form-label">item:</label>
+                      <input type="text" [(ngModel)]="compras.prov" class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
+                     
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputtext1" class="form-label">codigo:</label>
+                      <input type="text" class="form-control" id="exampleInputtext1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputtext1" class="form-label">Descripcion:</label>
+                        <input type="text" class="form-control" id="exampleInputtext1">
+                      </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="mb-3">
+                      <label for="exampleInputtext1" class="form-label">unidad</label>
+                      <input type="text" class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
+                      
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputtext1" class="form-label">cantidad:</label>
+                      <input type="text" class="form-control" id="exampleInputtext1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputtext1" class="form-label">Precio uni:</label>
+                        <input type="text" class="form-control" id="exampleInputtext1">
+                      </div>
+              </div>
+          </div>
+          <div class="mb-3">
+              <label for="exampleInputtext1" class="form-label">iva</label>
+              <input type="text-area" class="form-control" id="exampleInputtext1">
+            </div>
+            <div class="mb-3">
+              <label for="exampleInputtext1" class="form-label">descuento</label>
+              <input type="text-area" class="form-control" id="exampleInputtext1">
+            </div>
+          
+          
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>

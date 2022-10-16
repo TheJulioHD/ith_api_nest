@@ -1,0 +1,104 @@
+<div class="container">
+   
+</div><br>
+
+<br>
+<div class="container">
+
+  <div class="row">
+    <div class="col">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Agregar
+      </button><br>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-primary">
+        Imprimir
+      </button><br>
+    </div>
+    <div class="col"></div>
+    <div class="col"></div>
+  </div><table class="table">
+<thead class="table-dark">
+<tr>
+   <th scope="col">Item</th>
+   <th scope="col">Cliente</th>
+   <th scope="col">Materiales</th>
+   <th scope="col">Estado</th>
+   <th scope="col">direccion</th>
+   <th scope="col">telefono</th>
+   <th scope="col">Observaciones</th>
+   <th scope="col">Editar</th>
+</tr>
+</thead>
+<tbody>
+<tr >
+   <th scope="row">1</th>
+   <td>Juan</td>
+ <td>Pasto</td>
+ <td>Sonora</td>
+ <td>Av san martin 245</td>
+ <td>6624586241</td>
+ <td>Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat sapiente tenetur rem fuga sit deleniti, amet ea, aspernatur, consectetur officia dolor commodi laboriosam deserunt accusamus ut? Corporis dignissimos voluptate cumque.</td>
+ <td> <button type="button" class="btn btn-primary">Editar</button> &nbsp;&nbsp;
+  <button type="button" class="btn btn-primary">Borrar</button> </td>
+ 
+</tr>
+
+</tbody>
+</table>
+</div>
+
+<!-- Modal -->
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+<div class="modal-dialog">
+<div class="modal-content">
+<div class="modal-header">
+ <h1 class="modal-title fs-5" id="exampleModalLabel">Modal Agregar Ventas</h1>
+ <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+</div>
+<div class="modal-body">
+  
+    <div class="row">
+        <div class="col-md-4">
+            <div class="mb-3">
+                <label for="exampleInputtext1" class="form-label">Cliente:</label>
+                <input type="text"  class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
+               
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputtext1" class="form-label">Materiales:</label>
+                <input type="text" class="form-control" id="exampleInputtext1">
+              </div>
+              <div class="mb-3">
+                  <label for="exampleInputtext1" class="form-label">Estado:</label>
+                  <input type="text" class="form-control" id="exampleInputtext1">
+                </div>
+        </div>
+        <div class="col-md-4">
+            <div class="mb-3">
+                <label for="exampleInputtext1" class="form-label">Direccion:</label>
+                <input type="text" class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
+                
+              </div>
+              <div class="mb-3">
+                <label for="exampleInputtext1" class="form-label">Telefono:</label>
+                <input type="text" class="form-control" id="exampleInputtext1">
+              </div>
+              
+        </div>
+    </div>
+    <div class="mb-3">
+        <label for="exampleInputtext1" class="form-label">Observaciones</label>
+        <input type="text-area" class="form-control" id="exampleInputtext1">
+      </div>
+    
+    
+</div>
+<div class="modal-footer">
+ <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+ <button type="button" class="btn btn-primary">Save changes</button>
+</div>
+</div>
+</div>
+</div>

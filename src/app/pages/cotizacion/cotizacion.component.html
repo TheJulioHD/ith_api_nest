@@ -1,0 +1,95 @@
+<app-navbar></app-navbar>
+<div class="container content" role="main">
+    <h1>Cotizaciones</h1>
+    <form (onSubmit)="onSubmit()">
+        <div class="mb-3">
+          <label for="exampleInputEmail1" class="form-label">Email address</label>
+          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp">
+          <div id="emailHelp" class="form-text">We'll never share your email with anyone else.</div>
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Nombres</label>
+          <input type="text" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Apellidos</label>
+          <input type="text" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Direcccion</label>
+          <input type="text" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="mb-3">
+          <label for="exampleInputPassword1" class="form-label">Telefono</label>
+          <input type="text" class="form-control" id="exampleInputPassword1">
+        </div>
+        <div class="row">
+          <div class="col-md-2">
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Monto Minimo</label>
+              <input type="text" class="form-control" id="exampleInputPassword1">
+            </div>
+          </div>
+          <div class="col-md-2">
+            <div class="mb-3">
+              <label for="exampleInputPassword1" class="form-label">Monto Maximo</label>
+              <input type="text" class="form-control" id="exampleInputPassword1">
+            </div>
+          </div>
+          <div class="col-md-4">
+            <div class="mb-3">
+              <div class="form-floating">
+                  <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                    <option selected>Seleccione un tipo de material</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <label for="floatingSelect">Works with selects</label>
+                </div>
+          </div>
+          
+          
+          </div>
+          <div class="col-md-4">
+            <div class="mb-3">
+              <div class="form-floating">
+                  <select class="form-select" id="floatingSelect" aria-label="Floating label select example">
+                    <option selected>Seleccione un tipo de instalacion</option>
+                    <option value="1">One</option>
+                    <option value="2">Two</option>
+                    <option value="3">Three</option>
+                  </select>
+                  <label for="floatingSelect">Works with selects</label>
+                </div>
+          </div>
+          </div>
+        </div>
+        
+        <button type="submit" class="btn btn-primary">Cotizar</button>
+      </form>
+      <br>
+      <table class="table" >
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">#</th>
+            <th scope="col">Material</th>
+            <th scope="col">Precio</th>
+            <th scope="col">Sub total</th>
+            <th scope="col">IVA</th>
+            <th scope="col">Total</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>Mark</td>
+            <td>$15</td>
+            <td>$15</td>
+            <td>16%</td>
+            <td>$100</td>
+          </tr>
+          
+        </tbody>
+      </table>
+</div>

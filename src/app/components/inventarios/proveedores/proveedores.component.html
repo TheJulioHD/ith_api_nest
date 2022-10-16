@@ -1,0 +1,100 @@
+<div class="container">
+    
+  <div class="row">
+    <div class="col">
+      <button type="button" class="btn btn-primary" data-bs-toggle="modal" data-bs-target="#exampleModal">
+        Agregar
+      </button><br>
+    </div>
+    <div class="col">
+      <button type="button" class="btn btn-primary">
+        Imprimir
+      </button><br>
+    </div>
+    <div class="col"></div>
+    <div class="col"></div>
+  </div>
+    
+    <table class="table">
+        <thead class="table-dark">
+          <tr>
+            <th scope="col">Inidce</th>
+            <th scope="col">Código</th>
+            <th scope="col">Nombre</th>
+            <th scope="col">Direccion</th>
+            <th scope="col">Email</th>
+            <th scope="col">Télefono</th>
+            <th scope="col">Estatus</th>
+            <th scope="col">Acciones</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <th scope="row">1</th>
+            <td>uuid</td>
+            <td>Otto</td>
+            <td>tenologico 115</td>
+            <td>test@test.com</td>
+            <td>6624004869</td>
+            <td>Activo</td>
+            <td>
+                <button class="btn btn-primary">editar</button> &nbsp;&nbsp;
+                <button class="btn btn-primary">borrar</button> 
+            </td>
+          </tr>
+         
+        </tbody>
+      </table>
+</div>
+
+<div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+  <div class="modal-dialog">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalLabel">Modal Agregar Proveedores</h5>
+        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      </div>
+      <div class="modal-body">
+        
+          <div class="row">
+              <div class="col-md-4">
+                  <div class="mb-3">
+                      <label for="exampleInputtext1" class="form-label">Codigo:</label>
+                      <input type="text"  class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
+                     
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputtext1" class="form-label">Nombre:</label>
+                      <input type="text" class="form-control" id="exampleInputtext1">
+                    </div>
+                    <div class="mb-3">
+                        <label for="exampleInputtext1" class="form-label">Direccion:</label>
+                        <input type="text" class="form-control" id="exampleInputtext1">
+                      </div>
+              </div>
+              <div class="col-md-4">
+                  <div class="mb-3">
+                      <label for="exampleInputtext1" class="form-label">Email</label>
+                      <input type="email" class="form-control" id="exampleInputtext1" aria-describedby="textHelp">
+                      
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputtext1" class="form-label">Telefono:</label>
+                      <input type="text" class="form-control" id="exampleInputtext1">
+                    </div>
+                    <div class="mb-3">
+                      <label for="exampleInputtext1" class="form-label">Estatus:</label>
+                      <input type="text" class="form-control" id="exampleInputtext1">
+                    </div>
+              </div>
+          </div>
+          
+      
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary">Save changes</button>
+      </div>
+    </div>
+  </div>
+</div>
