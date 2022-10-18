@@ -2,14 +2,24 @@ import { usermodel } from './../../models/User.model';
 
 import { Injectable } from '@nestjs/common';
 
+import { InjectRepository } from '@nestjs/typeorm';
+import { Repository } from 'typeorm';
+import { User } from '../../Entity/user.entity';
+
 @Injectable()
 export class UserServiceService {
+    constructor(
+        @InjectRepository(User)
+        private usersRepository: Repository<User>,
+      ) {}
+      
     private readonly Users:usermodel[]=[];
     
     
-    create(user : usermodel){
-        this.Users.push(user);
-       let p = user;
+   async create(user : usermodel){
+        // this.Users.push(user);
+        return await this.usersRepository.insert(user); 
+      
         
     } 
 
@@ -21,35 +31,23 @@ export class UserServiceService {
     }
 
     updateUserById(id : number, user : usermodel) : boolean{
-        let user_index = this.Users.findIndex( (user) => user.id === id )
-        const useranterior = this.Users[user_index]
-        if(user_index !== -1){
-            //mantener los datos que no se van a actualizar
-            this.Users[user_index] = {
-                id : user.id,
-                name : user.name,
-                email : user.email,
-                cel : user.cel
-            }
-            this.checkuser(useranterior, user_index);
-            return true
-        }
-        return false
+      let user_index = this.Users.findIndex( (user) => user.id === id )
+      if( this.userExists(id) ){
+          //mantener los datos que no se van a actualizar
+          const new_user = Object.assign(this.Users[user_index], user)
+          this.Users[user_index] = new_user
+          return true
+      }
+      return false
     }
 
-    checkuser(useranterior:usermodel, user_index:number){
-        if(this.Users[user_index].id=== undefined){
-            this.Users[user_index].id= useranterior.id
-        }
-        if(this.Users[user_index].name=== undefined){
-            this.Users[user_index].name= useranterior.name
-        }
-        if(this.Users[user_index].email=== undefined){
-            this.Users[user_index].email= useranterior.email
-        }
-        if(this.Users[user_index].cel=== undefined){
-            this.Users[user_index].cel= useranterior.cel
-        }
+     /**
+     * @description Esta funcion verifica si un usuario existe o no.
+     * @param id id del usuario que queremos verificar si existe
+     * @returns true si el usuario existe o false si no existe
+     */
+      userExists(id : number) : boolean{
+        const index = this.Users.findIndex( usuario => usuario.id === id)
+        return index !== -1
     }
-
 }
