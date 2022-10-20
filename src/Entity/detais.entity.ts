@@ -14,5 +14,5 @@ export class detailsEntity{
     unit_price: number;
     @ManyToOne(() => sale, (sale) => sale.details)
     @JoinColumn({name:'idsale'})
-    idsale: sale;
+    idsale: number;
 }

@@ -18,17 +18,29 @@ export class SalesServicesService {
         let total = 0;
         sales.details.forEach(element => {
             total = total + ( element.quantity * element.unit_price )
-            details.product = element.product
-            details.quantity = element.quantity
-            details.unit_price = element.unit_price
+            
           });
+
           const newSale = await this.salesRepository.save({
             id_user:sales.id_user,
             date: date,
             total,
             
           });
-          details.idsale = newSale;
-        return this.detailsRepository.insert(details);
+          sales.details.forEach(element => {
+            details.product = element.product
+            details.quantity = element.quantity
+            details.unit_price = element.unit_price
+            details.idsale = newSale.id;
+             this.detailsRepository.insert(
+              {
+                idsale: details.idsale,
+                product: details.product,
+                quantity: details.quantity,
+                unit_price: details.unit_price
+              }
+            );
+          });
+        
       }
 }
